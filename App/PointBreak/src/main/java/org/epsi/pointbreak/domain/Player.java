@@ -8,14 +8,14 @@ public class Player {
 	private Integer id;
 	private String firstName;
 	private String lastName;
-	private char hand;
+	private Character hand;
 	private Date birthdate;
 	private String country;
 	
 	protected Player() {
 	}
 	
-	public Player(Integer id, String firstName, String lastName, char hand, Date birthdate, String country) {
+	public Player(Integer id, String firstName, String lastName, Character hand, Date birthdate, String country) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -49,11 +49,11 @@ public class Player {
 		this.lastName = lastName;
 	}
 
-	public char getHand() {
+	public Character getHand() {
 		return hand;
 	}
 
-	public void setHand(char hand) {
+	public void setHand(Character hand) {
 		this.hand = hand;
 	}
 

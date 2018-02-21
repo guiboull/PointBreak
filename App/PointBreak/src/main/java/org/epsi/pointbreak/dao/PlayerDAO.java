@@ -6,7 +6,7 @@ import org.epsi.pointbreak.domain.Player;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-public class JDBCPlayerDAO implements JDBCPlayerDAOInterface{
+public class PlayerDAO implements PlayerDAOInterface{
 	
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplate;

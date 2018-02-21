@@ -6,20 +6,21 @@ import java.util.Date;
 
 public class TennisMatch {
 	
-	private Long id;
-	
-	private Long tournamentId;
-	private Long playerOneId;
-	private Long playerTwoId;
-	private Long playerThreeId;
-	private Long playerFourId;
-	private Long refereeId;
+	private Integer id;
+
+	private Integer tournamentId;
+	private Integer playerOneId;
+	private Integer playerTwoId;
+	private Integer playerThreeId;
+	private Integer playerFourId;
+	private Integer refereeId;
 	private Date dateMatch;
 	private Integer bestOf;
 	private String roundTournament;
 	private String court;
 	private String tournamentType;
-	private Character service;
+	private Integer service;
+	private Integer winner;
 	private String firstTeamNumberOfSet;
 	private String secondTeamNumberOfSet;
 	private Integer firstTeamNumberOfWarnings;
@@ -28,18 +29,19 @@ public class TennisMatch {
 	private Integer secondTeamNumberOfChallenges;
 	private Time matchDurationTimestamp;
 	private Integer currentSet;
-	private Integer currentMatch;
+	private Integer currentGame;
 	private Integer currentFault;
 	
-	protected TennisMatch() {
+	public TennisMatch() {
 	
 	}
 
-	public TennisMatch(Long id, Long tournamentId, Long playerOneId, Long playerTwoId, Long playerThreeId,
-			Long playerFourId, Long refereeId, Date dateMatch, Integer bestOf, String roundTournament, String court,
-			String tournamentType, Character service, String firstTeamNumberOfSet, String secondTeamNumberOfSet,
-			Integer firstTeamNumberOfWarnings, Integer secondTeamNumberOfWarnings, Integer firstTeamNumberOfChallenges,
-			Integer secondTeamNumberOfChallenges, Time matchDurationTimestamp, Integer currentSet, Integer currentMatch,
+	public TennisMatch(Integer id, Integer tournamentId, Integer playerOneId, Integer playerTwoId,
+			Integer playerThreeId, Integer playerFourId, Integer refereeId, Date dateMatch, Integer bestOf,
+			String roundTournament, String court, String tournamentType, Integer service, Integer winner,
+			String firstTeamNumberOfSet, String secondTeamNumberOfSet, Integer firstTeamNumberOfWarnings,
+			Integer secondTeamNumberOfWarnings, Integer firstTeamNumberOfChallenges,
+			Integer secondTeamNumberOfChallenges, Time matchDurationTimestamp, Integer currentSet, Integer currentGame,
 			Integer currentFault) {
 		super();
 		this.id = id;
@@ -55,6 +57,7 @@ public class TennisMatch {
 		this.court = court;
 		this.tournamentType = tournamentType;
 		this.service = service;
+		this.winner = winner;
 		this.firstTeamNumberOfSet = firstTeamNumberOfSet;
 		this.secondTeamNumberOfSet = secondTeamNumberOfSet;
 		this.firstTeamNumberOfWarnings = firstTeamNumberOfWarnings;
@@ -63,63 +66,63 @@ public class TennisMatch {
 		this.secondTeamNumberOfChallenges = secondTeamNumberOfChallenges;
 		this.matchDurationTimestamp = matchDurationTimestamp;
 		this.currentSet = currentSet;
-		this.currentMatch = currentMatch;
+		this.currentGame = currentGame;
 		this.currentFault = currentFault;
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public Long getTournamentId() {
+	public Integer getTournamentId() {
 		return tournamentId;
 	}
 
-	public void setTournamentId(Long tournamentId) {
+	public void setTournamentId(Integer tournamentId) {
 		this.tournamentId = tournamentId;
 	}
 
-	public Long getPlayerOneId() {
+	public Integer getPlayerOneId() {
 		return playerOneId;
 	}
 
-	public void setPlayerOneId(Long playerOneId) {
+	public void setPlayerOneId(Integer playerOneId) {
 		this.playerOneId = playerOneId;
 	}
 
-	public Long getPlayerTwoId() {
+	public Integer getPlayerTwoId() {
 		return playerTwoId;
 	}
 
-	public void setPlayerTwoId(Long playerTwoId) {
+	public void setPlayerTwoId(Integer playerTwoId) {
 		this.playerTwoId = playerTwoId;
 	}
 
-	public Long getPlayerThreeId() {
+	public Integer getPlayerThreeId() {
 		return playerThreeId;
 	}
 
-	public void setPlayerThreeId(Long playerThreeId) {
+	public void setPlayerThreeId(Integer playerThreeId) {
 		this.playerThreeId = playerThreeId;
 	}
 
-	public Long getPlayerFourId() {
+	public Integer getPlayerFourId() {
 		return playerFourId;
 	}
 
-	public void setPlayerFourId(Long playerFourId) {
+	public void setPlayerFourId(Integer playerFourId) {
 		this.playerFourId = playerFourId;
 	}
 
-	public Long getRefereeId() {
+	public Integer getRefereeId() {
 		return refereeId;
 	}
 
-	public void setRefereeId(Long refereeId) {
+	public void setRefereeId(Integer refereeId) {
 		this.refereeId = refereeId;
 	}
 
@@ -163,12 +166,20 @@ public class TennisMatch {
 		this.tournamentType = tournamentType;
 	}
 
-	public Character getService() {
+	public Integer getService() {
 		return service;
 	}
 
-	public void setService(Character service) {
+	public void setService(Integer service) {
 		this.service = service;
+	}
+
+	public Integer getWinner() {
+		return winner;
+	}
+
+	public void setWinner(Integer winner) {
+		this.winner = winner;
 	}
 
 	public String getFirstTeamNumberOfSet() {
@@ -235,12 +246,12 @@ public class TennisMatch {
 		this.currentSet = currentSet;
 	}
 
-	public Integer getCurrentMatch() {
-		return currentMatch;
+	public Integer getCurrentGame() {
+		return currentGame;
 	}
 
-	public void setCurrentMatch(Integer currentMatch) {
-		this.currentMatch = currentMatch;
+	public void setCurrentGame(Integer currentGame) {
+		this.currentGame = currentGame;
 	}
 
 	public Integer getCurrentFault() {
@@ -250,6 +261,5 @@ public class TennisMatch {
 	public void setCurrentFault(Integer currentFault) {
 		this.currentFault = currentFault;
 	}
-	
-	
+
 }
