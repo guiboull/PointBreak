@@ -22,8 +22,8 @@
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/pointbreak" />
-		<property name="username" value="thomas" />
-		<property name="password" value="tsormonte" />
+		<property name="url" value="jdbc:mysql://mysql.montpellier.epsi.fr/pointbreak" />
+		<property name="username" value="p.raczkiewicz" />
+		<property name="password" value="admin123" />
 	</bean>
 </beans>
