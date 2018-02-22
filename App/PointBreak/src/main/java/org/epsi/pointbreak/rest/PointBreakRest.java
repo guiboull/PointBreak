@@ -5,8 +5,10 @@ import java.util.List;
 import org.epsi.pointbreak.PointBreakApplication;
 import org.epsi.pointbreak.dao.PlayerDAO;
 import org.epsi.pointbreak.dao.TennisMatchDAO;
+import org.epsi.pointbreak.dao.TournamentDAO;
 import org.epsi.pointbreak.domain.Player;
 import org.epsi.pointbreak.domain.TennisMatch;
+import org.epsi.pointbreak.domain.Tournament;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -45,5 +47,13 @@ public class PointBreakRest {
 		TennisMatchDAO tennisMatchDAO = (TennisMatchDAO) PointBreakApplication.context.getBean("TennisMatchDAO");
 		List<TennisMatch> tennisMatchList = tennisMatchDAO.getMatchByRefereeIdAndByTournamentId(refereeId, tournamentId);
 		return tennisMatchList;
+	}
+	
+	@RequestMapping(value="/tournamentlist/{refereeId}", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Tournament> getTournamentByRefereeId(@PathVariable("refereeId") Integer refereeId) {
+		TournamentDAO tournamentDAO = (TournamentDAO) PointBreakApplication.context.getBean("TournamentDAO");
+		List<Tournament> tournamentMatchList = tournamentDAO.getTournamentByRefereeId(refereeId);
+		return tournamentMatchList;
 	}
 }

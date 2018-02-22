@@ -11,7 +11,7 @@ public class MatchAction {
 	private Action actionType;
 	private Integer tournamentId;
 	
-	protected MatchAction() {
+	public MatchAction() {
 	
 	}
 

@@ -11,7 +11,7 @@ public class Ranking {
 	private Integer rankingPoints;
 	private Date rankingDate;
 	
-	protected Ranking() {
+	public Ranking() {
 		
 	}
 

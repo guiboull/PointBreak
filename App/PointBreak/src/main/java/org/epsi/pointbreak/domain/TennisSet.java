@@ -5,9 +5,9 @@ import java.sql.Time;
 
 public class TennisSet {
 	
-	private Long id;
+	private Integer id;
 	
-	private Long matchId;
+	private Integer matchId;
 	private Integer firstTeamScore;
 	private Integer secondTeamScore;
 	private Integer winner;
@@ -15,11 +15,11 @@ public class TennisSet {
 	private Integer firstTeamSetPoint;
 	private Integer secondTeamSetPoint;
 	
-	protected TennisSet() {
+	public TennisSet() {
 		
 	}
 
-	public TennisSet(Long id, Long matchId, Integer firstTeamScore, Integer secondTeamScore, Integer winner,
+	public TennisSet(Integer id, Integer matchId, Integer firstTeamScore, Integer secondTeamScore, Integer winner,
 			Time timeSet, Integer firstTeamSetPoint, Integer secondTeamSetPoint) {
 		super();
 		this.id = id;
@@ -32,19 +32,19 @@ public class TennisSet {
 		this.secondTeamSetPoint = secondTeamSetPoint;
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public Long getMatchId() {
+	public Integer getMatchId() {
 		return matchId;
 	}
 
-	public void setMatchId(Long matchId) {
+	public void setMatchId(Integer matchId) {
 		this.matchId = matchId;
 	}
 

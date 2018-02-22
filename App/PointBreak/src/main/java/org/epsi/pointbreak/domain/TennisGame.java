@@ -6,8 +6,8 @@ public class TennisGame {
 	
 	private Integer id;
 	
-	private Long setId;
-	private Long matchId;
+	private Integer setId;
+	private Integer matchId;
 	private Integer service;
 	private Time timeGame;
 	private Integer winner;
@@ -26,11 +26,11 @@ public class TennisGame {
 	private Integer firstTeamNumberOfGameBreak;
 	private Integer secondTeamNumberOfGameBreak;
 	
-	protected TennisGame() {
+	public TennisGame() {
 	
 	}
 
-	public TennisGame(Integer id, Long setId, Long matchId, Integer service, Time timeGame, Integer winner,
+	public TennisGame(Integer id, Integer setId, Integer matchId, Integer service, Time timeGame, Integer winner,
 			Integer firstTeamNumberOfAces, Integer secondTeamNumberOfAces, Integer firstTeamNumberOfLets,
 			Integer secondTeamNumberOfLets, Integer firstTeamNumberOfFaults, Integer secondTeamNumberOfFaults,
 			Integer firstTeamNumberOfDoubleFaults, Integer secondTeamNumberOfDoubleFaults,
@@ -67,19 +67,19 @@ public class TennisGame {
 		this.id = id;
 	}
 
-	public Long getSetId() {
+	public Integer getSetId() {
 		return setId;
 	}
 
-	public void setSetId(Long setId) {
+	public void setSetId(Integer setId) {
 		this.setId = setId;
 	}
 
-	public Long getMatchId() {
+	public Integer getMatchId() {
 		return matchId;
 	}
 
-	public void setMatchId(Long matchId) {
+	public void setMatchId(Integer matchId) {
 		this.matchId = matchId;
 	}
 

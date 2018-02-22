@@ -17,7 +17,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class TennisMatchDAO implements TennisMatchDAOInterface{
 	
 	private DataSource dataSource;
-	private JdbcTemplate jdbcTemplate;
 	
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
@@ -27,7 +26,7 @@ public class TennisMatchDAO implements TennisMatchDAOInterface{
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public List<TennisMatch> getAllMatches() {
 		String sql = "SELECT * FROM TENNISMATCH";
-		jdbcTemplate = new JdbcTemplate(dataSource);
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		List<TennisMatch> matchesList = new ArrayList<TennisMatch>();
 		List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
 		for (Map row: rows) {
@@ -80,7 +79,7 @@ public class TennisMatchDAO implements TennisMatchDAOInterface{
 	@Override
 	public List<TennisMatch> getMatchByRefereeIdAndByTournamentId(Integer refereeId, Integer tournamentId) {
 		String sql = "SELECT * FROM TENNISMATCH WHERE r_ID = ? AND t_ID = ?";
-		jdbcTemplate = new JdbcTemplate(dataSource);
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		List<TennisMatch> matchesList = new ArrayList<TennisMatch>();
 		List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql, refereeId, tournamentId);
 		for (Map row: rows) {

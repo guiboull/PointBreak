@@ -12,7 +12,7 @@ public class Player {
 	private Date birthdate;
 	private String country;
 	
-	protected Player() {
+	public Player() {
 	}
 	
 	public Player(Integer id, String firstName, String lastName, Character hand, Date birthdate, String country) {

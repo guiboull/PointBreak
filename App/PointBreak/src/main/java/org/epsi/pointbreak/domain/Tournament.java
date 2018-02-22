@@ -4,20 +4,19 @@ import java.util.Date;
 
 public class Tournament {
 	
-	private Long id;
-	
+	private Integer id;
 	private String tournamentName;
-	private Surface surfaceType;
+	private String surfaceType;
 	private Character gender;
 	private Integer numberOfPlayersInvolved;
 	private Date tournamentStartingDate;
 	private Date tournamentEndingDate;
 	
-	protected Tournament() {
+	public Tournament() {
 	
 	}
 
-	public Tournament(Long id, String tournamentName, Surface surfaceType, Character gender,
+	public Tournament(Integer id, String tournamentName, String surfaceType, Character gender,
 			Integer numberOfPlayersInvolved, Date tournamentStartingDate, Date tournamentEndingDate) {
 		super();
 		this.id = id;
@@ -29,11 +28,11 @@ public class Tournament {
 		this.tournamentEndingDate = tournamentEndingDate;
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -45,11 +44,11 @@ public class Tournament {
 		this.tournamentName = tournamentName;
 	}
 
-	public Surface getSurfaceType() {
+	public String getSurfaceType() {
 		return surfaceType;
 	}
 
-	public void setSurfaceType(Surface surfaceType) {
+	public void setSurfaceType(String surfaceType) {
 		this.surfaceType = surfaceType;
 	}
 

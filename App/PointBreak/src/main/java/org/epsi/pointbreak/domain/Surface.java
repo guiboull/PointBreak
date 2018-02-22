@@ -27,4 +27,14 @@ public enum Surface {
 		return surfaceType;
 	}
 	
+	public static String getSurfaceType(Character charValue) {
+		String surfaceToReturn = "Not Found";
+		for(Surface surface : Surface.values()) {
+            if (charValue.equals(surface.dbChar)) {
+            	surfaceToReturn = surface.surfaceType;
+            }
+        }
+		return surfaceToReturn;
+	}
+	
 }
