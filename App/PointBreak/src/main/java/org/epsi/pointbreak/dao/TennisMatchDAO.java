@@ -25,7 +25,7 @@ public class TennisMatchDAO implements TennisMatchDAOInterface{
 	@Override
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public List<TennisMatch> getAllMatches() {
-		String sql = "SELECT * FROM TENNISMATCH";
+		String sql = "SELECT * FROM tennismatch";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		List<TennisMatch> matchesList = new ArrayList<TennisMatch>();
 		List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
@@ -78,7 +78,7 @@ public class TennisMatchDAO implements TennisMatchDAOInterface{
 
 	@Override
 	public List<TennisMatch> getMatchByRefereeIdAndByTournamentId(Integer refereeId, Integer tournamentId) {
-		String sql = "SELECT * FROM TENNISMATCH WHERE r_ID = ? AND t_ID = ?";
+		String sql = "SELECT * FROM tennismatch WHERE r_ID = ? AND t_ID = ?";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		List<TennisMatch> matchesList = new ArrayList<TennisMatch>();
 		List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql, refereeId, tournamentId);

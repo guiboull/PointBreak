@@ -17,7 +17,7 @@ public class PlayerDAO implements PlayerDAOInterface{
 	@Override
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Player findById(int id) {
-		String sql = "SELECT * FROM PLAYER WHERE ID = ?";
+		String sql = "SELECT * FROM player WHERE ID = ?";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		Player player = (Player) jdbcTemplate.queryForObject(sql, new Object[] { id }, new BeanPropertyRowMapper(Player.class));
 	    return player;

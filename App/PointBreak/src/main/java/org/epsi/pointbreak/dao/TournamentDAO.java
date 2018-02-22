@@ -22,9 +22,9 @@ public class TournamentDAO implements TournamentDAOInterface{
 
 	@Override
 	public List<Tournament> getTournamentByRefereeId(int refereeId) {
-		String sql = "SELECT TOURNAMENT.* FROM TOURNAMENT "
-				+    "INNER JOIN TENNISMATCH ON TOURNAMENT.ID = TENNISMATCH.t_ID "
-				+    "AND TENNISMATCH.r_ID = ?";
+		String sql = "SELECT tournament.* FROM tournament "
+				+    "INNER JOIN tennismatch ON tournament.ID = tennismatch.t_ID "
+				+    "AND tennismatch.r_ID = ?";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		List<Tournament> tournamentList = new ArrayList<Tournament>();
 		List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql, refereeId);

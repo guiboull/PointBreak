@@ -28,7 +28,7 @@ public class PointBreakRest {
 	@RequestMapping(value="/player/{id}", method = RequestMethod.GET)
 	@ResponseBody
 	public Player getPlayerById(@PathVariable("id") Integer playerId) {
-		PlayerDAO playerDAO = (PlayerDAO) PointBreakApplication.context.getBean("JDBCPlayerDAO");
+		PlayerDAO playerDAO = (PlayerDAO) PointBreakApplication.context.getBean("PlayerDAO");
 		Player player = playerDAO.findById(playerId);
 		return player;
 	}
