@@ -19,6 +19,18 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
+	<bean id="CurrentMatchInfoDAO" class="org.epsi.pointbreak.dao.CurrentMatchInfoDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="CurrentScoreStateDAO" class="org.epsi.pointbreak.dao.CurrentScoreStateDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="MatchActionDAO" class="org.epsi.pointbreak.dao.MatchActionDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />

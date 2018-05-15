@@ -1,77 +1,44 @@
 package org.epsi.pointbreak.domain;
 
-import java.util.Date;
-
 public class MatchAction {
 	
-	private Integer id;
-	private Date matchDate;
-	private Integer setId;
-	private Integer gameId;
-	private Action actionType;
-	private Integer tournamentId;
+	private Integer m_id;
+	private Integer t_id;
+	private Integer a_id;
 	
 	public MatchAction() {
 	
 	}
 
-	public MatchAction(Integer id, Date matchDate, Integer setId, Integer gameId, Action actionType,
-			Integer tournamentId) {
+	public MatchAction(Integer m_id, Integer t_id, Integer a_id) {
 		super();
-		this.id = id;
-		this.matchDate = matchDate;
-		this.setId = setId;
-		this.gameId = gameId;
-		this.actionType = actionType;
-		this.tournamentId = tournamentId;
+		this.m_id = m_id;
+		this.t_id = t_id;
+		this.a_id = a_id;
 	}
 
-	public Integer getId() {
-		return id;
+	public Integer getM_id() {
+		return m_id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setM_id(Integer m_id) {
+		this.m_id = m_id;
 	}
 
-	public Date getMatchDate() {
-		return matchDate;
+	public Integer getT_id() {
+		return t_id;
 	}
 
-	public void setMatchDate(Date matchDate) {
-		this.matchDate = matchDate;
+	public void setT_id(Integer t_id) {
+		this.t_id = t_id;
 	}
 
-	public Integer getSetId() {
-		return setId;
+	public Integer getA_id() {
+		return a_id;
 	}
 
-	public void setSetId(Integer setId) {
-		this.setId = setId;
+	public void setA_id(Integer a_id) {
+		this.a_id = a_id;
 	}
 
-	public Integer getGameId() {
-		return gameId;
-	}
-
-	public void setGameId(Integer gameId) {
-		this.gameId = gameId;
-	}
-
-	public Action getActionType() {
-		return actionType;
-	}
-
-	public void setActionType(Action actionType) {
-		this.actionType = actionType;
-	}
-
-	public Integer getTournamentId() {
-		return tournamentId;
-	}
-
-	public void setTournamentId(Integer tournamentId) {
-		this.tournamentId = tournamentId;
-	}
-	
 }
