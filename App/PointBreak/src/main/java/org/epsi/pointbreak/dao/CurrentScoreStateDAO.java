@@ -17,7 +17,7 @@ public class CurrentScoreStateDAO implements CurrentScoreStateDAOInterface{
 	@Override
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public CurrentScoreState findCurrentScoreStateByMatchId(int id) {
-		String sql = "SELECT * FROM V_APP_SCORE WHERE m_ID = ?";
+		String sql = "SELECT * FROM v_app_score WHERE m_ID = ?";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		CurrentScoreState currentScoreState = (CurrentScoreState) jdbcTemplate.queryForObject(sql, new Object[] { id }, new BeanPropertyRowMapper(CurrentScoreState.class));
 	    return currentScoreState;

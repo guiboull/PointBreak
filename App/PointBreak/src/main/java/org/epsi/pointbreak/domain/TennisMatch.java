@@ -21,8 +21,8 @@ public class TennisMatch {
 	private String tournamentType;
 	private Integer service;
 	private Integer winner;
-	private String firstTeamNumberOfSet;
-	private String secondTeamNumberOfSet;
+	private Integer firstTeamNumberOfSet;
+	private Integer secondTeamNumberOfSet;
 	private Integer firstTeamNumberOfWarnings;
 	private Integer secondTeamNumberOfWarnings;
 	private Integer firstTeamNumberOfChallenges;
@@ -39,7 +39,7 @@ public class TennisMatch {
 	public TennisMatch(Integer id, Integer tournamentId, Integer playerOneId, Integer playerTwoId,
 			Integer playerThreeId, Integer playerFourId, Integer refereeId, Date dateMatch, Integer bestOf,
 			String roundTournament, String court, String tournamentType, Integer service, Integer winner,
-			String firstTeamNumberOfSet, String secondTeamNumberOfSet, Integer firstTeamNumberOfWarnings,
+			Integer firstTeamNumberOfSet, Integer secondTeamNumberOfSet, Integer firstTeamNumberOfWarnings,
 			Integer secondTeamNumberOfWarnings, Integer firstTeamNumberOfChallenges,
 			Integer secondTeamNumberOfChallenges, Time matchDurationTimestamp, Integer currentSet, Integer currentGame,
 			Integer currentFault) {
@@ -182,19 +182,19 @@ public class TennisMatch {
 		this.winner = winner;
 	}
 
-	public String getFirstTeamNumberOfSet() {
+	public Integer getFirstTeamNumberOfSet() {
 		return firstTeamNumberOfSet;
 	}
 
-	public void setFirstTeamNumberOfSet(String firstTeamNumberOfSet) {
+	public void setFirstTeamNumberOfSet(Integer firstTeamNumberOfSet) {
 		this.firstTeamNumberOfSet = firstTeamNumberOfSet;
 	}
 
-	public String getSecondTeamNumberOfSet() {
+	public Integer getSecondTeamNumberOfSet() {
 		return secondTeamNumberOfSet;
 	}
 
-	public void setSecondTeamNumberOfSet(String secondTeamNumberOfSet) {
+	public void setSecondTeamNumberOfSet(Integer secondTeamNumberOfSet) {
 		this.secondTeamNumberOfSet = secondTeamNumberOfSet;
 	}
 

@@ -57,8 +57,8 @@ public class TennisMatchDAO implements TennisMatchDAOInterface{
 			tennisMatch.setTournamentType(String.valueOf(row.get("TOURNAMENTTYPE")));
 			tennisMatch.setService(Integer.parseInt(String.valueOf(row.get("SERVICE"))));
 			tennisMatch.setWinner(Integer.parseInt(String.valueOf(row.get("WINNER"))));
-			tennisMatch.setFirstTeamNumberOfSet(String.valueOf(row.get("t1_SCORE")));
-			tennisMatch.setSecondTeamNumberOfSet(String.valueOf(row.get("t2_SCORE")));
+			tennisMatch.setFirstTeamNumberOfSet(Integer.parseInt(String.valueOf(row.get("t1_SCORE"))));
+			tennisMatch.setSecondTeamNumberOfSet(Integer.parseInt(String.valueOf(row.get("t2_SCORE"))));
 			tennisMatch.setFirstTeamNumberOfWarnings(Integer.parseInt(String.valueOf(row.get("t1_WARNING"))));
 			tennisMatch.setSecondTeamNumberOfWarnings(Integer.parseInt(String.valueOf(row.get("t2_WARNING"))));
 			tennisMatch.setFirstTeamNumberOfChallenges(Integer.parseInt(String.valueOf(row.get("t1_CHALLENGE"))));
@@ -110,8 +110,8 @@ public class TennisMatchDAO implements TennisMatchDAOInterface{
 			tennisMatch.setTournamentType(String.valueOf(row.get("TOURNAMENTTYPE")));
 			tennisMatch.setService(Integer.parseInt(String.valueOf(row.get("SERVICE"))));
 			tennisMatch.setWinner(Integer.parseInt(String.valueOf(row.get("WINNER"))));
-			tennisMatch.setFirstTeamNumberOfSet(String.valueOf(row.get("t1_SCORE")));
-			tennisMatch.setSecondTeamNumberOfSet(String.valueOf(row.get("t2_SCORE")));
+			tennisMatch.setFirstTeamNumberOfSet(Integer.parseInt(String.valueOf(row.get("t1_SCORE"))));
+			tennisMatch.setSecondTeamNumberOfSet(Integer.parseInt(String.valueOf(row.get("t2_SCORE"))));
 			tennisMatch.setFirstTeamNumberOfWarnings(Integer.parseInt(String.valueOf(row.get("t1_WARNING"))));
 			tennisMatch.setSecondTeamNumberOfWarnings(Integer.parseInt(String.valueOf(row.get("t2_WARNING"))));
 			tennisMatch.setFirstTeamNumberOfChallenges(Integer.parseInt(String.valueOf(row.get("t1_CHALLENGE"))));

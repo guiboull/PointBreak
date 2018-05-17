@@ -17,7 +17,7 @@ public class CurrentMatchInfoDAO implements CurrentMatchInfoDAOInterface{
 	@Override
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public CurrentMatchInfo findCurrentMatchInfoByMatchId(int id) {
-		String sql = "SELECT * FROM V_APP_MATCH WHERE m_ID = ?";
+		String sql = "SELECT * FROM v_app_match WHERE m_ID = ?";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		CurrentMatchInfo currentMatchInfo = (CurrentMatchInfo) jdbcTemplate.queryForObject(sql, new Object[] { id }, new BeanPropertyRowMapper(CurrentMatchInfo.class));
 	    return currentMatchInfo;
