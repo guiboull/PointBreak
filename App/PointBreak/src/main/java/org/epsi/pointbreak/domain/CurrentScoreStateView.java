@@ -1,6 +1,6 @@
 package org.epsi.pointbreak.domain;
 
-public class CurrentScoreState {
+public class CurrentScoreStateView {
 	
 	private Integer m_t1score;
 	private Integer m_t2score;
@@ -16,11 +16,11 @@ public class CurrentScoreState {
 	private Integer s_s5t2score;
 	private Integer m_service;
 	
-	public CurrentScoreState() {
+	public CurrentScoreStateView() {
 		
 	}
 
-	public CurrentScoreState(Integer m_t1score, Integer m_t2score, Integer s_s1t1score, Integer s_s1t2score,
+	public CurrentScoreStateView(Integer m_t1score, Integer m_t2score, Integer s_s1t1score, Integer s_s1t2score,
 			Integer s_s2t1score, Integer s_s2t2score, Integer s_s3t1score, Integer s_s3t2score, Integer s_s4t1score,
 			Integer s_s4t2score, Integer s_s5t1score, Integer s_s5t2score, Integer m_service) {
 		super();

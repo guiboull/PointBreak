@@ -11,7 +11,7 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
-	<bean id="TennisMatchDAO" class="org.epsi.pointbreak.dao.TennisMatchDAO">
+	<bean id="TennisMatchDAO" class="org.epsi.pointbreak.dao.TennisMatchListItemDAO">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
@@ -19,11 +19,11 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
-	<bean id="CurrentMatchInfoDAO" class="org.epsi.pointbreak.dao.CurrentMatchInfoDAO">
+	<bean id="CurrentMatchInfoDAO" class="org.epsi.pointbreak.dao.CurrentMatchInfoViewDAO">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
-	<bean id="CurrentScoreStateDAO" class="org.epsi.pointbreak.dao.CurrentScoreStateDAO">
+	<bean id="CurrentScoreStateDAO" class="org.epsi.pointbreak.dao.CurrentScoreStateViewDAO">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	

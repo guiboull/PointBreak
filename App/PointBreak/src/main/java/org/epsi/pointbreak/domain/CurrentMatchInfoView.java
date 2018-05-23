@@ -1,6 +1,6 @@
 package org.epsi.pointbreak.domain;
 
-public class CurrentMatchInfo {
+public class CurrentMatchInfoView {
 	
 	private String p_p1name;
 	private String p_p1country;
@@ -12,11 +12,11 @@ public class CurrentMatchInfo {
 	private String p_p4country;
 	private String t_surface;
 	
-	public CurrentMatchInfo() {
+	public CurrentMatchInfoView() {
 		
 	}
 
-	public CurrentMatchInfo(String p_p1name, String p_p1country, String p_p2name, String p_p2country, String p_p3name,
+	public CurrentMatchInfoView(String p_p1name, String p_p1country, String p_p2name, String p_p2country, String p_p3name,
 			String p_p3country, String p_p4name, String p_p4country, String t_surface) {
 		super();
 		this.p_p1name = p_p1name;
