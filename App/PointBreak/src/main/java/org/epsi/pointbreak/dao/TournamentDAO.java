@@ -22,7 +22,7 @@ public class TournamentDAO implements TournamentDAOInterface{
 
 	@Override
 	public List<Tournament> getTournamentByRefereeId(int refereeId) {
-		String sql = "SELECT tournament.* FROM tournament "
+		String sql = "SELECT DISTINCT tournament.* FROM tournament "
 				+    "INNER JOIN tennismatch ON tournament.ID = tennismatch.t_ID "
 				+    "AND tennismatch.r_ID = ?";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
@@ -38,13 +38,11 @@ public class TournamentDAO implements TournamentDAOInterface{
 			try {
 				tournament.setTournamentStartingDate(new SimpleDateFormat("yyyyMMdd").parse(String.valueOf(row.get("DATESTART"))));
 			} catch (ParseException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			try {
 				tournament.setTournamentEndingDate(new SimpleDateFormat("yyyyMMdd").parse(String.valueOf(row.get("DATEEND"))));
 			} catch (ParseException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			tournamentList.add(tournament);
