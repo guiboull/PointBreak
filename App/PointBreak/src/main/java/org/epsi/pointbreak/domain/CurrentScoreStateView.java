@@ -4,6 +4,10 @@ public class CurrentScoreStateView {
 	
 	private Integer m_t1score;
 	private Integer m_t2score;
+	private Integer m_t1challenge;
+	private Integer m_t2challenge;
+	private Integer m_t1warning;
+	private Integer m_t2warning;
 	private Integer s_s1t1score;
 	private Integer s_s1t2score;
 	private Integer s_s2t1score;
@@ -20,12 +24,17 @@ public class CurrentScoreStateView {
 		
 	}
 
-	public CurrentScoreStateView(Integer m_t1score, Integer m_t2score, Integer s_s1t1score, Integer s_s1t2score,
-			Integer s_s2t1score, Integer s_s2t2score, Integer s_s3t1score, Integer s_s3t2score, Integer s_s4t1score,
-			Integer s_s4t2score, Integer s_s5t1score, Integer s_s5t2score, Integer m_service) {
+	public CurrentScoreStateView(Integer m_t1score, Integer m_t2score, Integer m_t1challenge, Integer m_t2challenge,
+			Integer m_t1warning, Integer m_t2warning, Integer s_s1t1score, Integer s_s1t2score, Integer s_s2t1score,
+			Integer s_s2t2score, Integer s_s3t1score, Integer s_s3t2score, Integer s_s4t1score, Integer s_s4t2score,
+			Integer s_s5t1score, Integer s_s5t2score, Integer m_service) {
 		super();
 		this.m_t1score = m_t1score;
 		this.m_t2score = m_t2score;
+		this.m_t1challenge = m_t1challenge;
+		this.m_t2challenge = m_t2challenge;
+		this.m_t1warning = m_t1warning;
+		this.m_t2warning = m_t2warning;
 		this.s_s1t1score = s_s1t1score;
 		this.s_s1t2score = s_s1t2score;
 		this.s_s2t1score = s_s2t1score;
@@ -53,6 +62,38 @@ public class CurrentScoreStateView {
 
 	public void setM_t2score(Integer m_t2score) {
 		this.m_t2score = m_t2score;
+	}
+
+	public Integer getM_t1challenge() {
+		return m_t1challenge;
+	}
+
+	public void setM_t1challenge(Integer m_t1challenge) {
+		this.m_t1challenge = m_t1challenge;
+	}
+
+	public Integer getM_t2challenge() {
+		return m_t2challenge;
+	}
+
+	public void setM_t2challenge(Integer m_t2challenge) {
+		this.m_t2challenge = m_t2challenge;
+	}
+
+	public Integer getM_t1warning() {
+		return m_t1warning;
+	}
+
+	public void setM_t1warning(Integer m_t1warning) {
+		this.m_t1warning = m_t1warning;
+	}
+
+	public Integer getM_t2warning() {
+		return m_t2warning;
+	}
+
+	public void setM_t2warning(Integer m_t2warning) {
+		this.m_t2warning = m_t2warning;
 	}
 
 	public Integer getS_s1t1score() {
@@ -142,5 +183,5 @@ public class CurrentScoreStateView {
 	public void setM_service(Integer m_service) {
 		this.m_service = m_service;
 	}
-	
+
 }
