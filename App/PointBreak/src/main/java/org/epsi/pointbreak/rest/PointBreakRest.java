@@ -98,10 +98,12 @@ public class PointBreakRest {
 			System.out.println(e.toString());
 		}
 		
-		if(referee.getPassword() == output.toString()) {
+		String passwordFromFront = new String(output);
+		
+		if(referee.getPassword().equals(passwordFromFront)) {
 			return referee.getId();
 		}
 		
-		return null;
+		return new Integer(0);
 	}
 }
