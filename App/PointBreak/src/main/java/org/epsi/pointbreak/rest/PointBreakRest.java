@@ -7,11 +7,13 @@ import org.epsi.pointbreak.dao.CurrentMatchInfoViewDAO;
 import org.epsi.pointbreak.dao.CurrentScoreStateViewDAO;
 import org.epsi.pointbreak.dao.MatchActionDAO;
 import org.epsi.pointbreak.dao.PlayerDAO;
+import org.epsi.pointbreak.dao.RefereeDAO;
 import org.epsi.pointbreak.dao.TennisMatchListItemDAO;
 import org.epsi.pointbreak.dao.TournamentDAO;
 import org.epsi.pointbreak.domain.CurrentMatchInfoView;
 import org.epsi.pointbreak.domain.CurrentScoreStateView;
 import org.epsi.pointbreak.domain.Player;
+import org.epsi.pointbreak.domain.Referee;
 import org.epsi.pointbreak.domain.TennisMatchListItem;
 import org.epsi.pointbreak.domain.Tournament;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -73,5 +75,16 @@ public class PointBreakRest {
 	public CurrentMatchInfoView initializeCurrentMatch(@PathVariable("matchId") Integer matchId) {
 		CurrentMatchInfoViewDAO currentMatchInfoDAO = (CurrentMatchInfoViewDAO) PointBreakApplication.context.getBean("CurrentMatchInfoDAO"); 
 		return currentMatchInfoDAO.findCurrentMatchInfoByMatchId(matchId);
+	}
+	
+	@RequestMapping(value="/process/{login}/{password}", method = RequestMethod.GET)
+	@ResponseBody
+	public Integer getReferee(@PathVariable("login") String login, @PathVariable("password") byte[] password ) {
+		RefereeDAO refereeDAO = (RefereeDAO) PointBreakApplication.context.getBean("RefereeDAO");
+		Referee referee =  refereeDAO.findByLogin(login);
+		if (referee.getPassword() == password) {
+			return referee.getId();
+		}
+		return null;
 	}
 }
