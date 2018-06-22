@@ -6,13 +6,13 @@ public class Referee {
 	private String firstName;
 	private String lastName;
 	private String login;
-	private byte[] password;
+	private String password;
 	
 	public Referee() {
 		
 	}
 	
-	public Referee(Integer id, String firstName, String lastName, String login, byte[] password) {
+	public Referee(Integer id, String firstName, String lastName, String login, String password) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -53,11 +53,11 @@ public class Referee {
 		this.login = login;
 	}
 
-	public byte[] getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(byte[] password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 	

@@ -16,7 +16,7 @@ private DataSource dataSource;
 	@Override
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Referee findByLogin(String login) {
-		String sql = "SELECT * FROM referee WHERE LOGIN = ?";
+		String sql = "SELECT ID,FIRSTNAME,LASTNAME,LOGIN, CAST(AES_DECRYPT(PASSWORD,'testtesttesttest')AS CHAR(50)) AS PASSWORD FROM referee WHERE LOGIN = ?";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		Referee referee = (Referee) jdbcTemplate.queryForObject(sql, new Object[] { login }, new BeanPropertyRowMapper(Referee.class));
 	    return referee;

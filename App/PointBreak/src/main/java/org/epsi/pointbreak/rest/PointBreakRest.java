@@ -2,6 +2,9 @@ package org.epsi.pointbreak.rest;
 
 import java.util.List;
 
+import javax.crypto.Cipher;
+import javax.crypto.spec.SecretKeySpec;
+
 import org.epsi.pointbreak.PointBreakApplication;
 import org.epsi.pointbreak.dao.CurrentMatchInfoViewDAO;
 import org.epsi.pointbreak.dao.CurrentScoreStateViewDAO;
@@ -77,14 +80,28 @@ public class PointBreakRest {
 		return currentMatchInfoDAO.findCurrentMatchInfoByMatchId(matchId);
 	}
 	
+	
 	@RequestMapping(value="/process/{login}/{password}", method = RequestMethod.GET)
 	@ResponseBody
-	public Integer getReferee(@PathVariable("login") String login, @PathVariable("password") byte[] password ) {
+	public Integer getReferee(@PathVariable("login") String login, @PathVariable("password") String password ) {
 		RefereeDAO refereeDAO = (RefereeDAO) PointBreakApplication.context.getBean("RefereeDAO");
 		Referee referee =  refereeDAO.findByLogin(login);
-		if (referee.getPassword() == password) {
+		byte[] output = null;
+		String key ="testtesttesttest";
+		try {
+			java.util.Base64.Decoder decoder = java.util.Base64.getDecoder();
+			SecretKeySpec skey = new SecretKeySpec(key.getBytes(), "AES");
+			Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+			cipher.init(Cipher.DECRYPT_MODE, skey);
+			output = cipher.doFinal(decoder.decode(password));
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		if(referee.getPassword() == output.toString()) {
 			return referee.getId();
 		}
+		
 		return null;
 	}
 }
