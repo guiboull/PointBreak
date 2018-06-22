@@ -82,7 +82,6 @@ public class PointBreakRest {
 	
 	
 	@RequestMapping(value="/process/{login}/{password}", method = RequestMethod.GET)
-	@ResponseBody
 	public Integer getReferee(@PathVariable("login") String login, @PathVariable("password") String password ) {
 		RefereeDAO refereeDAO = (RefereeDAO) PointBreakApplication.context.getBean("RefereeDAO");
 		Referee referee =  refereeDAO.findByLogin(login);
