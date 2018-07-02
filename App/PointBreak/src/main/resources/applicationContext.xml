@@ -11,6 +11,14 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
+	<bean id="SetStatsDAO" class="org.epsi.pointbreak.dao.SetStatsViewDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="MatchFullStatsViewDAO" class="org.epsi.pointbreak.dao.MatchFullStatsViewDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
 	<bean id="TennisMatchDAO" class="org.epsi.pointbreak.dao.TennisMatchListItemDAO">
 		<property name="dataSource" ref="dataSource" />
 	</bean>

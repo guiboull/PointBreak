@@ -21,6 +21,7 @@ public class TournamentDAO implements TournamentDAOInterface{
 	}
 
 	@Override
+	@SuppressWarnings({ "rawtypes" })
 	public List<Tournament> getTournamentByRefereeId(int refereeId) {
 		String sql = "SELECT DISTINCT tournament.* FROM tournament "
 				+    "INNER JOIN tennismatch ON tournament.ID = tennismatch.t_ID "

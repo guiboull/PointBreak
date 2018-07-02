@@ -5,72 +5,92 @@ import java.util.Date;
 
 public class Player {
 	
-	private Integer id;
-	private String firstName;
-	private String lastName;
-	private Character hand;
-	private Date birthdate;
-	private String country;
+	private Integer p_ID;
+	private String p_FIRSTNAME;
+	private String p_LASTNAME;
+	private Character p_HAND;
+	private Date p_BIRTHDAY;
+	private String p_COUNTRY;
+	private Integer rk_RANKING;
+	private Integer rk_POINTS;
 	
 	public Player() {
 	}
-	
-	public Player(Integer id, String firstName, String lastName, Character hand, Date birthdate, String country) {
+
+	public Player(Integer p_ID, String p_FIRSTNAME, String p_LASTNAME, Character p_HAND, Date p_BIRTHDAY,
+			String p_COUNTRY, Integer rk_RANKING, Integer rk_POINTS) {
 		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.hand = hand;
-		this.birthdate = birthdate;
-		this.country = country;
+		this.p_ID = p_ID;
+		this.p_FIRSTNAME = p_FIRSTNAME;
+		this.p_LASTNAME = p_LASTNAME;
+		this.p_HAND = p_HAND;
+		this.p_BIRTHDAY = p_BIRTHDAY;
+		this.p_COUNTRY = p_COUNTRY;
+		this.rk_RANKING = rk_RANKING;
+		this.rk_POINTS = rk_POINTS;
 	}
 
-	public Integer getId() {
-		return id;
+	public Integer getP_ID() {
+		return p_ID;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setP_ID(Integer p_ID) {
+		this.p_ID = p_ID;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getP_FIRSTNAME() {
+		return p_FIRSTNAME;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setP_FIRSTNAME(String p_FIRSTNAME) {
+		this.p_FIRSTNAME = p_FIRSTNAME;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getP_LASTNAME() {
+		return p_LASTNAME;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setP_LASTNAME(String p_LASTNAME) {
+		this.p_LASTNAME = p_LASTNAME;
 	}
 
-	public Character getHand() {
-		return hand;
+	public Character getP_HAND() {
+		return p_HAND;
 	}
 
-	public void setHand(Character hand) {
-		this.hand = hand;
+	public void setP_HAND(Character p_HAND) {
+		this.p_HAND = p_HAND;
 	}
 
-	public Date getBirthdate() {
-		return birthdate;
+	public Date getP_BIRTHDAY() {
+		return p_BIRTHDAY;
 	}
 
-	public void setBirthdate(Date birthdate) {
-		this.birthdate = birthdate;
+	public void setP_BIRTHDAY(Date p_BIRTHDAY) {
+		this.p_BIRTHDAY = p_BIRTHDAY;
 	}
 
-	public String getCountry() {
-		return country;
+	public String getP_COUNTRY() {
+		return p_COUNTRY;
 	}
 
-	public void setCountry(String country) {
-		this.country = country;
+	public void setP_COUNTRY(String p_COUNTRY) {
+		this.p_COUNTRY = p_COUNTRY;
 	}
-	
+
+	public Integer getRk_RANKING() {
+		return rk_RANKING;
+	}
+
+	public void setRk_RANKING(Integer rk_RANKING) {
+		this.rk_RANKING = rk_RANKING;
+	}
+
+	public Integer getRk_POINTS() {
+		return rk_POINTS;
+	}
+
+	public void setRk_POINTS(Integer rk_POINTS) {
+		this.rk_POINTS = rk_POINTS;
+	}
 }

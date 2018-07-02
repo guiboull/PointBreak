@@ -9,14 +9,18 @@ import org.epsi.pointbreak.PointBreakApplication;
 import org.epsi.pointbreak.dao.CurrentMatchInfoViewDAO;
 import org.epsi.pointbreak.dao.CurrentScoreStateViewDAO;
 import org.epsi.pointbreak.dao.MatchActionDAO;
+import org.epsi.pointbreak.dao.MatchFullStatsViewDAO;
 import org.epsi.pointbreak.dao.PlayerDAO;
 import org.epsi.pointbreak.dao.RefereeDAO;
+import org.epsi.pointbreak.dao.SetStatsViewDAO;
 import org.epsi.pointbreak.dao.TennisMatchListItemDAO;
 import org.epsi.pointbreak.dao.TournamentDAO;
 import org.epsi.pointbreak.domain.CurrentMatchInfoView;
 import org.epsi.pointbreak.domain.CurrentScoreStateView;
+import org.epsi.pointbreak.domain.MatchFullStatsView;
 import org.epsi.pointbreak.domain.Player;
 import org.epsi.pointbreak.domain.Referee;
+import org.epsi.pointbreak.domain.SetStatsView;
 import org.epsi.pointbreak.domain.TennisMatchListItem;
 import org.epsi.pointbreak.domain.Tournament;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,6 +43,41 @@ public class PointBreakRest {
 	public Player getPlayerById(@PathVariable("id") Integer playerId) {
 		PlayerDAO playerDAO = (PlayerDAO) PointBreakApplication.context.getBean("PlayerDAO");
 		return playerDAO.findById(playerId);
+	}
+	
+	@RequestMapping(value="/playerslist", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Player> getAllPlayers() {
+		PlayerDAO playerDAO = (PlayerDAO) PointBreakApplication.context.getBean("PlayerDAO");
+		return playerDAO.getAllPlayers();
+	}
+	
+	@RequestMapping(value="/rankedplayerslist", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Player> getAllRankedPlayers() {
+		PlayerDAO playerDAO = (PlayerDAO) PointBreakApplication.context.getBean("PlayerDAO");
+		return playerDAO.getAllRankedPlayers();
+	}
+	
+	@RequestMapping(value="/topplayerslist", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Player> getTopRankedPlayers() {
+		PlayerDAO playerDAO = (PlayerDAO) PointBreakApplication.context.getBean("PlayerDAO");
+		return playerDAO.getTopRankedPlayers();
+	}
+	
+	@RequestMapping(value="/getSetStats/{matchId}/{setId}", method = RequestMethod.GET)
+	@ResponseBody
+	public SetStatsView findSetStats(@PathVariable("matchId") Integer matchId, @PathVariable("setId") Integer setId ) {
+		SetStatsViewDAO setStatsDAO = (SetStatsViewDAO) PointBreakApplication.context.getBean("SetStatsDAO");
+		return setStatsDAO.getSetStats(matchId, setId);
+	}
+	
+	@RequestMapping(value="/getMatchFullStats/{matchId}", method = RequestMethod.GET)
+	@ResponseBody
+	public MatchFullStatsView findMatchFullStats(@PathVariable("matchId") Integer matchId) {
+		MatchFullStatsViewDAO matchFullStatsViewDAO = (MatchFullStatsViewDAO) PointBreakApplication.context.getBean("MatchFullStatsViewDAO");
+		return matchFullStatsViewDAO.findMatchStatsById(matchId);
 	}
 	
 	@RequestMapping(value="/matchlist", method = RequestMethod.GET)

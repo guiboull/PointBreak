@@ -20,7 +20,7 @@ public class TennisMatchListItemDAO implements TennisMatchListItemDAOInterface{
 	}
 
 	@Override
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ "rawtypes" })
 	public List<TennisMatchListItem> getAllMatches() {
 		String sql = "SELECT * FROM tennismatch";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
@@ -48,6 +48,7 @@ public class TennisMatchListItemDAO implements TennisMatchListItemDAOInterface{
 	}
 
 	@Override
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public List<TennisMatchListItem> getMatchByRefereeIdAndByTournamentId(Integer refereeId, Integer tournamentId) {
 		String sql = "SELECT * FROM v_app_match_list WHERE r_ID = ? AND t_ID = ?";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
